@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-image: linear-gradient(30deg, #8360c3 0%, #2ebf91 100%);
+  background-attachment: fixed;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  line-height: 160%;
+}
+
+header {
+  padding-top: 32px;
+  height: calc(100px + 32px);
+}
+
+header div {
+  width: 6em;
+  margin: auto;
+  background-image: linear-gradient(
+    90deg,
+    #3c5ea8 0%,
+    #73a0fd 50.52%,
+    #bceef9 100%
+  );
+
+  border-radius: 50%;
+
+  display: flex;
+  padding: 4px;
+
+  transition: transform 0.3s;
+}
+
+header div:hover {
+  transform: scale(1.1);
+}
+
+header div img {
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+main {
+  width: 70%;
+  margin: 32px auto;
+  display: flex;
+  justify-content: space-around;
+  gap: 24px;
+}
+
+section {
+  color: white;
+}
+
+section div {
+  background-color: #131318;
+  padding: 32px;
+  padding-top: 24px;
+  border-radius: 8px; 
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+section h2 {
+  letter-spacing: -0.47px;
+}
+
+section p {
+  letter-spacing: -0.18px;
+  color: #a1a1aa;
+}
+
+section ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  justify-content: space-around;
+  justify-items: center;
+  align-items: center;
+  width: 20em;
+  height: 18em;
+  padding-top: 1em;
+}
+section ul img {
+  transition: transform 0.3s;
+}
+
+section ul img:hover {
+  transform: scale(1.15);
+}
+
+.games-list img {
+  width: 100px;
+  border-radius: 8px;
+  width: 6em;
+}
+
+.channel-list img {
+  border-radius: 90%;
+  width: 70px;
+  border: 1px solid #221f29;
+}
+
+/* animation */
+
+header div {
+  animation: fromTop 0.7s 0.2s backwards;
+}
+
+main section {
+  animation: fromBottom 0.7s backwards;
+}
+
+main section:nth-child(1) {
+  animation-delay: 0;
+}
+
+main section:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+main section:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 480px) {
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+}
